@@ -1,4 +1,18 @@
+if(location.href.indexOf("login.html")){
+  $.ajax({
+    type:"get",
+    dataType:"json",
+    url:"/employee/checkRootLogin",
+    success:function(info){
+      if(info.error === 400){
+        location.href = "login.html"
+      }
+      if(info.success){
 
+      }
+    }
+  })
+}
 $(function(){
   $('.category').click(function(){
     $('.child').stop().slideToggle()
