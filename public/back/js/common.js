@@ -1,4 +1,4 @@
-if(location.href.indexOf("login.html")){
+if(location.href.indexOf("login.html") === -1){
   $.ajax({
     type:"get",
     dataType:"json",
@@ -13,6 +13,8 @@ if(location.href.indexOf("login.html")){
     }
   })
 }
+
+
 $(function(){
   $('.category').click(function(){
     $('.child').stop().slideToggle()

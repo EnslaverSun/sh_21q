@@ -23,8 +23,8 @@
       <li><a href="user.html"><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a></li>
       <li>
         <a class="category" href="javascript:;"><i class="glyphicon glyphicon-list"></i><span>分类管理</span></a>
-        <div class="child" style="display: none">
-          <a  href="first.html" >一级分类</a>
+        <div class="child" >
+          <a class="current"  href="first.html" >一级分类</a>
           <a  href="second.html">二级分类</a>
         </div>
       </li>
@@ -45,7 +45,7 @@
       <li class="active">分类管理</li>
       <li class="active">一级分类</li>
     </ol>
-  </div>
+
 
   <button class=" Fbtn btn btn-default" style="margin-left: 20px; margin-bottom: 10px ">添加分类</button>
 
@@ -112,13 +112,12 @@
     </div>
   </div>
 </div>
-
+</div>
 <script type="text/html" id="tpl">
     {{  each rows v i }}
       <tr>
         <td>{{ i + 1 + (page - 1) * size }}</td>
-        <td>{{ v.categoryName
-          }}</td>
+        <td>{{ v.categoryName}}</td>
       </tr>
 
     {{  /each }}
