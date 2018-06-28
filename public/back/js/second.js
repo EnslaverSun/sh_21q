@@ -10,7 +10,7 @@ $(function(){
       url:"/category/querySecondCategoryPaging",
       dataType:"json",
       data:{
-        Page:currentPage,
+        page:currentPage,
         pageSize:pageSize
       },
       success:function(info){
@@ -21,10 +21,10 @@ $(function(){
 
         $("#paginator").bootstrapPaginator({
           bootstrapMajorVersion:3,
+          currentPage:currentPage,
           totalPages:Math.ceil(info.total / info.size),
-          currentPage:info.page,
           onPageClicked:function(a,b,c,page){
-            currentPage = page;
+            currentPage = page
             render()
           }
         })
@@ -44,8 +44,20 @@ $(function(){
         pageSize:100
       },
       success:function(info){
+        console.log(info);
         var droptplStr = template("dropdownTpl",info)
-        $("#dropdownTxt").html(droptplStr)
+        $(".dropdown-menu").html(droptplStr)
+
+
+        $("#paginator").bootstrapPaginator({
+          bootstrapMajorVersion:3,
+          currentPage:currentPage,
+          totalPages:Math.ceil(info.total / info.size),
+          onPageClicked:function(a,b,c,page){
+            currentPage = page
+            render()
+          }
+        })
       }
     })
   })
@@ -63,7 +75,7 @@ $(function(){
 
 
 
-//  使用js初始化文件上传
+  //使用js初始化文件上传
 
   $("fileupload").fileupload({
     dataType:"json",
@@ -80,7 +92,7 @@ $(function(){
   })
 
 
-  $('#form').bootstrapPaginator({
+  $('#form').bootstrapValidator({
     excluded:[],
     feedbackIcons: {
       valid: 'glyphicon glyphicon-ok',
