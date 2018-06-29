@@ -97,6 +97,10 @@ img{
   text-align: center;
   color: #fff;
 }
+.lt_container .bot p{
+  margin: 0;
+  padding: 0;
+}
 .lt_container .bot .current{
   color: orange;
 }

@@ -1,0 +1,41 @@
+.cate_mid{
+  width: 100%;
+  height: 100%;
+  /*padding-left: 90px;*/
+  position: relative;
+}
+.cate_left{
+  position: relative;
+  float: left;
+  width: 90px;
+  height: 100%;
+  background-color: #E3E4E5;
+}
+.cate_left a{
+  display: block;
+  width: 90px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  color: #666;
+}
+.cate_left .current{
+  background-color: #fff;
+  border-right:none;
+}
+.cate_right{
+  height: 100%;
+  background-color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+.cate_right ul{
+  padding: 10px;
+}
+.cate_right ul li{
+  width: 33%;
+  float: left;
+  text-align: center;
+}
